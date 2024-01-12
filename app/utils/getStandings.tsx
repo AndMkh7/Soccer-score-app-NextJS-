@@ -30,7 +30,7 @@ export default async function getStandings(): Promise<Standing[]> {
         {name: "Ligue 1", id: 61},
     ];
     for (const league of leagues){
-        let  url = 'https://api-football-beta.p.rapidapi.com/standings?season=${year}&league=${league.id}';
+        let  url = `https://api-football-beta.p.rapidapi.com/standings?season=${year}&league=${league.id}`;
       
         await fetch(url, options)
         .then(response=>response.json())
