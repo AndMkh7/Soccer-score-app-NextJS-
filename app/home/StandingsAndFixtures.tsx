@@ -83,7 +83,7 @@ export default function StandingsAndFixtures({
             >
               {standingsData.map((responseData, i) => (
                 <div
-                  key={responseData.league.id}
+                  key={responseData.league.id + i}
                   className="flex-shrink-0 w-full snap-center flex
                                         justify-center items-center"
                 >
