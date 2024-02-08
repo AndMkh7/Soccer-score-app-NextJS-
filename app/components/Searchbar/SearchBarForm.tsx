@@ -31,12 +31,12 @@ export default function SearchBarForm({ teamsData }: { teamsData: Team[] }) {
       }
       console.log(focusedIndex);
       setFocusedIndex((prevIndex) =>
-        prevIndex < length - 1 ? prevIndex + 1 : prevIndex
+        prevIndex < length - 1 ? prevIndex + 1 : 0
       );
     } else if (event.key === "ArrowUp") {
       event.preventDefault();
       setFocusedIndex((prevIndex) =>
-        prevIndex > 0 ? prevIndex - 1 : prevIndex
+        prevIndex > 0 ? prevIndex - 1 : 9
       );
     } else if (event.key === "Enter") {
       if (focusedIndex !== -1) {
@@ -82,7 +82,7 @@ export default function SearchBarForm({ teamsData }: { teamsData: Team[] }) {
       {searchTerm && filteredTeams.length > 0 && showFilteredBox ? (
         <div
           ref={teamListRef}
-          className="absolute top-full left-2 w-full max-w-md bg-black/80
+          className="absolute top-full  w-full max-w-md bg-black/70
                         z-20 flex flex-col"
         >
           {filteredTeams.slice(0, 10).map((standing, i) => (
